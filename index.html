@@ -32,22 +32,24 @@
         <input type="submit" value="SUBMIT" id="submitButtonRSVP">
       </select>
       </div>
-     <form id="form_if_yes">
-            I will be there!<br>
+     <form id="form">
+            <h3 class="form_heading"></h3><br>
+            Greeting:<br>
             <input type="text" name="greeting" id="greeting" val=""/><br>
             Choose the occasion:<br>
-            <label for="birthday">Birthday</label>
-            <input type="radio" name="occasion1" id="birthday" value='birthday' checked><br>
-            <label for="party">Party</label>
-            <input type="radio" name="occasion1" id="party" value="party"><br>
-            <label for="wedding">Wedding</label>
-            <input type="radio" name="occasion1" id="wedding" value="wedding"><br>
+            <select id="occasion" name="occasion">
+                <h3>Please RSVP below:</h3>
+                <option value="birthday">Birthday</option>
+                <option value="party">Party</option>
+                <option value="wedding">Wedding</option>
+                <input type="submit" value="SUBMIT" id="submitButtonRSVP">
+            </select>
             <label for="message">Your message:</label><br>
             <textarea type="text" id="message" name="message" cols="50" rows="8"></textarea><br>
-            <input type="submit" value="SUBMIT" id="submitButton">
+            <input type="submit" value="SUBMIT" id="submitButtonForm">
         </form>
 
-        <form id="form_if_no">
+        <!-- <form id="form_if_no">
             I can't make it :(<br>
             <input type="text" name="greeting" id="greeting" val=""/><br>
             Choose the occasion:<br>
@@ -60,7 +62,7 @@
             <label for="message">Your message:</label><br>
             <textarea type="text" id="message" name="message" cols="50" rows="8"></textarea><br>
             <input type="submit" value="SUBMIT" id="submitButton">
-        </form>
+        </form> -->
 
         <div id="card-section">
             <p id="p-greeting">Greeting</p>

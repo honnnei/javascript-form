@@ -31,7 +31,7 @@ article {
 
 }
 
-#form_if_yes {
+#form {
     display: none;
     /* display: flex; */
     flex-direction: column;

@@ -7,20 +7,33 @@ document.addEventListener("DOMContentLoaded", function(){
 $(function() {
     $("#submitButtonRSVP").click(function(e) {
        console.log($("#rsvp").val());
+       event.preventDefault();
         if (($("#rsvp").val()) === "yes") {
             console.log("if works");
             $("#rsvp_div").slideUp(1000, function() {
-                $("#form_if_yes").slideDown(2000);
+                $(".form_heading").text("I will be there");
+                $("#form").slideDown(2000);
             });
             } else if (($("#rsvp").val()) === "no") {
             console.log("no");
             $("#rsvp_div").slideUp(1000, function() {
-                $("#form_if_no").slideDown(2000);
+                $(".form_heading").text("I will sadly not be there");
+                $("#form").slideDown(2000);
             });
-            
-        }      
-        
+        }     
     });
+
+    $("#submitButtonForm").click(function(e) {
+        event.preventDefault();
+        $("#p-greeting").html($("#greeting").val());
+
+        $("#p-occasion").html(`I will sadly not be able to attend Your ${$("#occasion").val()}`);
+        $("#p-message").html($("#message").val());
+        $("#form").slideUp(2000, function() {
+            $("#card-section").slideDown(3000);
+        });
+    });
+
 });
 });
 
