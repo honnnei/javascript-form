@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="./style.css" rel="stylesheet" type="style/css" />
-    <script src="./main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
 
@@ -19,9 +20,21 @@
         On Submitting the button the form should be hidden and a card should be shown in place.
         Stretch goal: Use the unsplash API to pull i -->
 
-        <form id="form">
-            Greeting:<br>
-            <input type="text" name="greeting" id="greeting" /><br>
+<header>
+    <h1>You've Received an Invitation!</h1>
+</header>        
+<article>
+    <div id="rsvp_div">
+    <select id="rsvp" name="rsvp">
+        <h3>Please RSVP below:</h3>
+        <option value="yes">I will be there!</option>
+        <option value="no">Unfortunately, I can't make this date :(</option>
+        <input type="submit" value="SUBMIT" id="submitButtonRSVP">
+      </select>
+      </div>
+     <form id="form_if_yes">
+            I will be there!<br>
+            <input type="text" name="greeting" id="greeting" val=""/><br>
             Choose the occasion:<br>
             <label for="birthday">Birthday</label>
             <input type="radio" name="occasion1" id="birthday" value='birthday' checked><br>
@@ -30,17 +43,36 @@
             <label for="wedding">Wedding</label>
             <input type="radio" name="occasion1" id="wedding" value="wedding"><br>
             <label for="message">Your message:</label><br>
-            <textarea type="text" id="message" name="message"></textarea><br>
-            <input type="submit" value="SUBMIT" id="btn" onclick="showCard()">
-
+            <textarea type="text" id="message" name="message" cols="50" rows="8"></textarea><br>
+            <input type="submit" value="SUBMIT" id="submitButton">
         </form>
 
-        <div id="card-page">
+        <form id="form_if_no">
+            I can't make it :(<br>
+            <input type="text" name="greeting" id="greeting" val=""/><br>
+            Choose the occasion:<br>
+            <label for="birthday">Birthday</label>
+            <input type="radio" name="occasion1" id="birthday" value='birthday' checked><br>
+            <label for="party">Party</label>
+            <input type="radio" name="occasion1" id="party" value="party"><br>
+            <label for="wedding">Wedding</label>
+            <input type="radio" name="occasion1" id="wedding" value="wedding"><br>
+            <label for="message">Your message:</label><br>
+            <textarea type="text" id="message" name="message" cols="50" rows="8"></textarea><br>
+            <input type="submit" value="SUBMIT" id="submitButton">
+        </form>
+
+        <div id="card-section">
             <p id="p-greeting">Greeting</p>
             <p id="p-occasion">Occasion</p>
             <p id="p-message">Message</p>
         </div>
-
+    </article>
+<footer>
+    <h3>Background Photo by Adi Goldstein on Unsplash</h3>
+</footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="./main.js"></script>
 
     
 </body>
