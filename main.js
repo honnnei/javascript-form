@@ -1,24 +1,28 @@
 document.addEventListener("DOMContentLoaded", function(){
     console.log("Testing DOM");
     
+    
 
 
 
 $(function() {
     $("#submitButtonRSVP").click(function(e) {
-       console.log($("#rsvp").val());
        event.preventDefault();
+       
         if (($("#rsvp").val()) === "yes") {
             console.log("if works");
+            
             $("#rsvp_div").slideUp(1000, function() {
+               
                 $(".form_heading").text("I will be there");
-                $("#form").slideDown(2000);
-            });
+                $("#form_div").show(300);
+              });
+              
             } else if (($("#rsvp").val()) === "no") {
-            console.log("no");
-            $("#rsvp_div").slideUp(1000, function() {
+                
+                $("#rsvp_div").slideUp(1000, function() {
                 $(".form_heading").text("I will sadly not be there");
-                $("#form").slideDown(2000);
+                $("#form_div").show(300);
             });
         }     
     });
@@ -28,8 +32,17 @@ $(function() {
         $("#p-greeting").html($("#greeting").val());
 
         $("#p-occasion").html(`I will sadly not be able to attend Your ${$("#occasion").val()}`);
+
+        if (($("#rsvp").val()) === "yes") {
+            $("#p-occasion").html(`I can't wait to attend your ${$("#occasion").val()}!`);
+            
+            } else if (($("#rsvp").val()) === "no") {
+            $("#p-occasion").html(`Sadly, I won't be able to attend your ${$("#occasion").val()}. :(`);
+            
+        }     
+
         $("#p-message").html($("#message").val());
-        $("#form").slideUp(2000, function() {
+        $("#form").slideUp(1000, function() {
             $("#card-section").slideDown(3000);
         });
     });

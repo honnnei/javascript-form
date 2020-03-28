@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css">
     
 </head>
@@ -25,29 +26,30 @@
 </header>        
 <article>
     <div id="rsvp_div">
-    <select id="rsvp" name="rsvp">
+    <select class="custom-select mr-sm-2" id="rsvp" name="rsvp">
         <h3>Please RSVP below:</h3>
         <option value="yes">I will be there!</option>
         <option value="no">Unfortunately, I can't make this date :(</option>
-        <input type="submit" value="SUBMIT" id="submitButtonRSVP">
+        <input type="submit" value="SUBMIT" id="submitButtonRSVP" class="btn btn-outline-light btn-lg">
       </select>
       </div>
+      <div id="form_div">
      <form id="form">
             <h3 class="form_heading"></h3><br>
             Greeting:<br>
-            <input type="text" name="greeting" id="greeting" val=""/><br>
+            <input type="text" name="greeting" id="greeting" cols="30" val=""/><br>
             Choose the occasion:<br>
-            <select id="occasion" name="occasion">
+            <select id="occasion" name="occasion"><br>
                 <h3>Please RSVP below:</h3>
                 <option value="birthday">Birthday</option>
                 <option value="party">Party</option>
-                <option value="wedding">Wedding</option>
-                <input type="submit" value="SUBMIT" id="submitButtonRSVP">
-            </select>
+                <option value="wedding">Wedding</option><br>
+            </select><br>
             <label for="message">Your message:</label><br>
-            <textarea type="text" id="message" name="message" cols="50" rows="8"></textarea><br>
-            <input type="submit" value="SUBMIT" id="submitButtonForm">
+            <textarea type="text" id="message" name="message" cols="30" rows="4"></textarea><br>
+            <input type="submit" value="SUBMIT" id="submitButtonForm" class="btn btn-outline-light btn-lg">
         </form>
+    </div>
 
         <!-- <form id="form_if_no">
             I can't make it :(<br>
@@ -68,6 +70,7 @@
             <p id="p-greeting">Greeting</p>
             <p id="p-occasion">Occasion</p>
             <p id="p-message">Message</p>
+            <h3 class="message_sent">Thank You! Your Message Has Been Sent!</h3>
         </div>
     </article>
 <footer>
